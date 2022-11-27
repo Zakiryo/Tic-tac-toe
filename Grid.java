@@ -16,7 +16,8 @@ public class Grid {
         grid.append("\n");
         int counter = 0;
         for (int i = 0; i < 3; ++i) {
-            grid.append(Cells.get(counter).getSymbol()).append("|").append(Cells.get(counter + 1).getSymbol()).append("|").append(Cells.get(counter + 2).getSymbol()).append("\n");
+            grid.append(Cells.get(counter).getSymbol()).append("|").append(Cells.get(counter + 1).getSymbol())
+                    .append("|").append(Cells.get(counter + 2).getSymbol()).append("\n");
             counter += 3;
         }
         return grid.toString();
@@ -27,9 +28,11 @@ public class Grid {
     }
 
     public boolean haveSameSymbols(Cell c1, Cell c2, Cell c3) {
-        if (Objects.equals(c1.getSymbol(), " ") && Objects.equals(c2.getSymbol(), " ") && Objects.equals(c3.getSymbol(), " "))
+        if (Objects.equals(c1.getSymbol(), " ") && Objects.equals(c2.getSymbol(), " ")
+                && Objects.equals(c3.getSymbol(), " "))
             return false;
-        return (Objects.equals(c1.getSymbol(), c2.getSymbol())) && (Objects.equals(c2.getSymbol(), c3.getSymbol())) && (Objects.equals(c1.getSymbol(), c3.getSymbol()));
+        return (Objects.equals(c1.getSymbol(), c2.getSymbol())) && (Objects.equals(c2.getSymbol(), c3.getSymbol()))
+                && (Objects.equals(c1.getSymbol(), c3.getSymbol()));
     }
 
     public boolean isFinished() {
@@ -47,7 +50,8 @@ public class Grid {
             }
             ++counter;
         }
-        return haveSameSymbols(Cells.get(0), Cells.get(4), Cells.get(8)) || haveSameSymbols(Cells.get(2), Cells.get(4), Cells.get(6));
+        return haveSameSymbols(Cells.get(0), Cells.get(4), Cells.get(8))
+                || haveSameSymbols(Cells.get(2), Cells.get(4), Cells.get(6));
     }
 
     public void isFull() {
